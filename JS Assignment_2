@@ -1,0 +1,65 @@
+//Question 1 - Print Pattern
+
+let pattern="";
+let count=1;
+for(let i=1;i<=4;i++)
+{
+    for(let j=1;j<=i;j++)
+    {
+        pattern+=count+" ";
+        count++;
+    }
+    pattern+="\n";
+}
+console.log(pattern);
+
+
+
+//Question 2 - Check Armstrong Number
+
+function checkArmstrong(num)
+{
+    let temp=num
+    let sum=0
+    while(num>0)
+    {
+        let digit=num%10
+        sum+=(digit*digit*digit)
+        num=parseInt(num/10)
+    }
+    if(sum===temp)
+        return `${temp} is a Armstrong number`
+    else
+        return `${temp} is not a Armstrong number`
+}
+let result=checkArmstrong(153)
+console.log(result+"\n");
+
+
+
+
+//Question 3 - Check Special Number
+
+function factorial(digit)
+{
+    let ans=1
+    for(let i=1;i<=digit;i++)
+        ans*=i;
+    return ans
+}
+function checkSpecialNumber(num)
+{
+    let sum=0
+    let temp=num
+    while(num>0)
+    {
+        remainder=num%10
+        sum+=factorial(remainder)
+        num=parseInt(num/10)
+    }
+    if(sum===temp)
+        return `${sum} is a Special number`;
+    return `${sum} is not a Special number`;
+}
+let answer=checkSpecialNumber(145)
+console.log(answer+"\n");
